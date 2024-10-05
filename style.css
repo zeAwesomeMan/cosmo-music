@@ -1,0 +1,50 @@
+*{
+    outline: 1px solid red;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.wrapper{
+    position: relative;
+}
+.invisible a{
+    background-color: antiquewhite;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    color: antiquewhite;
+    text-decoration: none;
+}
+#image-container{
+    display: flex;
+    justify-content: center;
+}   
+.orion-constellation a{
+    right: 750px;
+    top: 930px;
+}
+#orion{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.return{
+    display: flex;
+    background-color: antiquewhite;
+    height: 30px;
+    width: 70px;
+    color: black;
+    flex-direction: column;
+}
+.description{
+    background-color: antiquewhite;
+}
+.wr-124 a{
+    right: 1050px;
+    top: 550px;
+}
+.ngc-1333 a{
+    right: 300px;
+    top: 500px;
+}
