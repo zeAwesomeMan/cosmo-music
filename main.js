@@ -11,7 +11,6 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
     // Get the button and output elements
     const startBtn = document.getElementById('start-btn');
     const output = document.getElementById('output');
-    const confirmationSound = document.getElementById('confirmation-sound');
 
     // Check for specific commands
         if (command.includes("orion")) {
