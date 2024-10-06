@@ -11,15 +11,25 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
     // Get the button and output elements
     const startBtn = document.getElementById('start-btn');
     const output = document.getElementById('output');
+    const confirmationSound = document.getElementById('confirmation-sound');
 
     // Define actions based on recognized commands
     const processCommand = (command) => {
         command = command.toLowerCase(); // Convert to lowercase for easier matching
-
-        if (command.includes("Yes")) {
-            output.textContent = "Going to, milkyway";
-            window.open('https://www.google.com', '_blank');
-        } else {
+        if (command.includes("yes")){
+            confirmationSound.play();
+            
+            if (command.includes("orion")) {
+                output.textContent = "Opening orion";
+                window.location.href = 'Nebula-Galaxy-Constellation/orion-constellation.html';
+            } else if (command.includes("w r")) {
+                output.textContent = "Opening WR-124"
+                window.location.href='Nebula-Galaxy-Constellation/wr-124.html';
+            } else if (command.includes("n g c")) {
+                output.textContent = "Opening NGC-1333"
+                window.location.href='Nebula-Galaxy-Constellation/ngc-1333.html';
+        }}
+        else {
             output.textContent = "Sorry, I didn't recognize that command.";
         }
     };
@@ -47,4 +57,9 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
         recognition.stop();
         output.textContent += " (Stopped listening)";
     };
+    document.addEventListener('keydown', (event) => {
+    if (event.key === 'S' || event.key === 's') {  // Check for 'S' or 's' key
+        startBtn.click(); // Programmatically click the button
+    }
+});
 }
