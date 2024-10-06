@@ -13,10 +13,7 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
     const output = document.getElementById('output');
     const confirmationSound = document.getElementById('confirmation-sound');
 
-    // Define actions based on recognized commands
-    if (command.includes("yes")) {
-        
-        // Check for specific commands
+    // Check for specific commands
         if (command.includes("orion")) {
             output.textContent = "Opening Orion...";
             window.location.href = 'Nebula-Galaxy-Constellation/orion-constellation.html';
@@ -26,11 +23,8 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
         } else if (command.includes("n g c")) {
             output.textContent = "Opening NGC-1333...";
             window.location.href = 'Nebula-Galaxy-Constellation/ngc-1333.html';
-        } else {
-            output.textContent = "Sorry, I didn't recognize that specific command.";
-        }
 
-    } else {
+    }else {
         output.textContent = "Sorry, I didn't recognize that command.";
     };
 
