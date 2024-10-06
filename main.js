@@ -12,26 +12,26 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
     const startBtn = document.getElementById('start-btn');
     const output = document.getElementById('output');
     const confirmationSound = document.getElementById('confirmation-sound');
-    
-    // Define actions based on recognized commands
-    const processCommand = (command) => {
-        command = command.toLowerCase(); // Convert to lowercase for easier matching
-        if (command.includes("yes")){
-            confirmationSound.play();
 
-            if (command.includes("orion")) {
-                output.textContent = "Opening orion";
-                window.location.href = 'Nebula-Galaxy-Constellation/orion-constellation.html';
-            } else if (command.includes("w r")) {
-                output.textContent = "Opening WR-124"
-                window.location.href='Nebula-Galaxy-Constellation/wr-124.html';
-            } else if (command.includes("n g c")) {
-                output.textContent = "Opening NGC-1333"
-                window.location.href='Nebula-Galaxy-Constellation/ngc-1333.html';
-        }}
-        else {
-            output.textContent = "Sorry, I didn't recognize that command.";
+    // Define actions based on recognized commands
+    if (command.includes("yes")) {
+        
+        // Check for specific commands
+        if (command.includes("orion")) {
+            output.textContent = "Opening Orion...";
+            window.location.href = 'Nebula-Galaxy-Constellation/orion-constellation.html';
+        } else if (command.includes("w r", "double-u ar", "wr 124")) {
+            output.textContent = "Opening WR-124...";
+            window.location.href = 'Nebula-Galaxy-Constellation/wr-124.html';
+        } else if (command.includes("n g c")) {
+            output.textContent = "Opening NGC-1333...";
+            window.location.href = 'Nebula-Galaxy-Constellation/ngc-1333.html';
+        } else {
+            output.textContent = "Sorry, I didn't recognize that specific command.";
         }
+
+    } else {
+        output.textContent = "Sorry, I didn't recognize that command.";
     };
 
     // Start speech recognition when the button is clicked
