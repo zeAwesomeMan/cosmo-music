@@ -12,13 +12,13 @@ if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) 
     const startBtn = document.getElementById('start-btn');
     const output = document.getElementById('output');
     const confirmationSound = document.getElementById('confirmation-sound');
-
+    
     // Define actions based on recognized commands
     const processCommand = (command) => {
         command = command.toLowerCase(); // Convert to lowercase for easier matching
         if (command.includes("yes")){
             confirmationSound.play();
-            
+
             if (command.includes("orion")) {
                 output.textContent = "Opening orion";
                 window.location.href = 'Nebula-Galaxy-Constellation/orion-constellation.html';
