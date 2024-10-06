@@ -1,12 +1,15 @@
 .secret{
     display: none;
 }
-*{
+/* *{
     outline: 1px solid red;
     box-sizing: border-box;
-}
+} */
 body{
     background-color: black;
+}
+p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .wrapper{
     position: relative;
@@ -29,25 +32,41 @@ body{
 }
 #orion{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    margin: auto -50px;
 }
 .return{
     display: flex;
     background-color: antiquewhite;
-    height: 30px;
-    width: 70px;
+    height: 22px;
+    width: 64px;
     color: black;
     flex-direction: column;
 }
 .description{
     background-color: antiquewhite;
 }
+.description.wolf-124{
+    margin: 0 auto;
+    width: 80%;
+}
+.description.ng-1333{
+    margin: 0 auto;
+    width: 80%;
+}
+.description.orion-1{
+    margin: 0 auto;
+    width: 80%;
+}
+.description.orion-1 .download{
+    font-size: 25px;
+}
 .wr-124 a{
-    right: 1050px;
-    top: 550px;
+    right: 950px;
+    top: 480px;
 }
 .ngc-1333 a{
-    right: 300px;
-    top: 500px;
+    right: 650px;
+    top: 1000px;
 }
